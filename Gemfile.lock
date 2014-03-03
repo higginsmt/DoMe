@@ -93,11 +93,7 @@ GEM
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
-<<<<<<< HEAD
-    factory_girl_rails (4.4.0)
-=======
     factory_girl_rails (4.4.1)
->>>>>>> 0034b4d2c9cb6be84f9fbf3547f235e90ab3b621
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     faker (1.2.0)
