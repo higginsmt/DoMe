@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-stack_explorer'
   gem 'coffee-rails-source-maps'
+  gem 'factory_girl_rails'
 end
 
 # Other gems you may find useful for development
