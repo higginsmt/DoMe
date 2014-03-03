@@ -31,28 +31,14 @@ ActiveRecord::Schema.define(version: 20140302203410) do
   create_table "adventures", force: true do |t|
     t.integer  "user_id"
     t.integer  "activity_id"
-    t.integer  "story_id"
+    t.text     "story"
     t.date     "date_completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "adventures", ["activity_id"], name: "index_adventures_on_activity_id", using: :btree
-  add_index "adventures", ["story_id"], name: "index_adventures_on_story_id", using: :btree
   add_index "adventures", ["user_id"], name: "index_adventures_on_user_id", using: :btree
-
-  create_table "stories", force: true do |t|
-    t.text     "body"
-    t.integer  "user_id"
-    t.integer  "adventure_id"
-    t.integer  "activity_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "stories", ["activity_id"], name: "index_stories_on_activity_id", using: :btree
-  add_index "stories", ["adventure_id"], name: "index_stories_on_adventure_id", using: :btree
-  add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",               default: "", null: false
