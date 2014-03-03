@@ -23,7 +23,6 @@ group :test do
   gem 'capybara'  # Simulates a user clicking things in your app (testing)
   gem 'launchy'   # Opens app in a broswer
   gem 'faker'     # Populates fake data
-  gem 'factory_girl'
 end
 
 group :development, :test do
@@ -35,6 +34,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-stack_explorer'
   gem 'coffee-rails-source-maps'
+  gem 'factory_girl_rails'
 end
 
 # Other gems you may find useful for development
