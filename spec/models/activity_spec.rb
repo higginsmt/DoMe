@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Activity do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "associations" do
+    it { should belong_to :user }
+    it { should have_many :adventures }
+  end
 end
