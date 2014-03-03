@@ -23,7 +23,6 @@ group :test do
   gem 'capybara'  # Simulates a user clicking things in your app (testing)
   gem 'launchy'   # Opens app in a broswer
   gem 'faker'     # Populates fake data
-  gem 'factory_girl'
 end
 
 group :development, :test do

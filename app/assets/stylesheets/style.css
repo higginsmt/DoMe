@@ -1,3 +1,9 @@
 nav {
   display: inline;
 }
+
+#feature-space {
+  background-color: LightGoldenRodYellow;
+  height: 300px;
+  width: 300px;
+}
