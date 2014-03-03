@@ -6,5 +6,6 @@ feature 'Visitor views homepage' do
     expect(page).to have_content("Do Me!")  # App Title
     expect(page).to have_link("About")
     expect(page).to have_button("Suggest an activity")
+    expect(page).to have_link("Sign in")
   end
 end
