@@ -8,4 +8,10 @@ class ActivitiesController < ApplicationController
   def about
   end
 
+  def new
+    @activity = Activity.new
+  end
+
+
+
 end

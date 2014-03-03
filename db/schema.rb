@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140302203410) do
     t.text     "name"
     t.text     "blurb"
     t.text     "url"
-    t.text     "things_needed", default: [], array: true
+    t.text     "things_needed"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
