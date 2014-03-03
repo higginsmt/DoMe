@@ -4,10 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
 
-  has_many :adventures                         # An adventure joins activities and users
-
-  has_many :activities, through: :adventures   # Activities the user completed
-  has_many :activities                         # Activities the user submitted
-  has_many :stories, through: :adventures      # Stories (attached to the adventure)
-
+  has_many :adventures
+  has_many :created_activities, class_name: Activity # Activities that a user has submitted
+  has_many :completed_activities, through: :adventures, source: :activity # Activities a user has completed - need the adventure to connect user to the activity they completed
 end
