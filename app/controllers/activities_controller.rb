@@ -29,7 +29,6 @@ class ActivitiesController < ApplicationController
       redirect_to new_user_session_path
     else
       @activity = Activity.new(activity_params)
-      # current_user.created_activities << @activity
       if !@activity.save
         flash[:error] = @activity.errors.full_messages.join(", ")
         render :new
