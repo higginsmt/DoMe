@@ -6,6 +6,8 @@ feature 'Visitor views homepage' do
     visit root_path
     expect(page).to have_content("Do Me!")  # App Title
     expect(page).to have_link("About")
+    expect(page).to have_link("Suggest an activity")
+    expect(page).to have_link("Sign in")
     expect(page).to have_button("What should I do today?")
   end
 end

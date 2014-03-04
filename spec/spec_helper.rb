@@ -8,10 +8,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
-
   # Disable this since database_cleaner does the same thing and more
   config.use_transactional_fixtures = false
-
   config.order = "random"
   I18n.enforce_available_locales = false
   config.color_enabled = true

@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.text :name
       t.text :blurb
       t.text :url
-      t.text :things_needed, array: true, default: []
+      t.text :things_needed
       t.references :user, index: true
 
       t.timestamps
