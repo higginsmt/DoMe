@@ -13,3 +13,12 @@ nav ul li {
   height: 300px;
   width: 300px;
 }
+
+.input_row {
+  margin: 30px;
+}
+
+.submit_activity {
+  margin-left: 30px;
+}
+
