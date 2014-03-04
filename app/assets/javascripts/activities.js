@@ -11,7 +11,7 @@ $(document).ready(function(){
 })
 
 var Deck = Deck || {
-  current_card: 1,
+  current_card: 0,
   cards: []
 };
 
@@ -25,7 +25,7 @@ Deck.renderCard = function(e) {
 
   console.log(this.current_card);
   if (Deck.current_card === Deck.cards.length - 1) {
-    Deck.current_card = 0;
+    Deck.current_card = -1;
   }
   this.current_card++;
   $featureSpace.empty();
