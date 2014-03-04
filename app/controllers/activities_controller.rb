@@ -17,7 +17,7 @@ class ActivitiesController < ApplicationController
   def create
     if current_user.nil?
       session[:activity_params] = activity_params
-      redirect_to new_user_registration_path
+      redirect_to new_user_session_path
     else
       @activity = Activity.new(activity_params)
       if !@activity.save
