@@ -10,9 +10,6 @@ feature 'User views submitted activities' do
     act3 = Activity.create(name: 'Laugh', url: 'http://google.com')
     user.created_activities << act3
     sign_in_as(user)
-    # act1 = create(:activity, creator: user)
-    # act2 = create(:activity, creator: user)
-    # act3 = create(:activity, creator: user)
     click_link 'View my submissions'
     expect(page).to have_content(act1.name)
     expect(page).to have_content(act2.name)

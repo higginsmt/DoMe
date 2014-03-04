@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
   end
 
   def index
-
+    @submitted = current_user.created_activities
   end
 
   def new
