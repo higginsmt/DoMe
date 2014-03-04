@@ -4,7 +4,6 @@ FactoryGirl.define do
     password 'swordfish'
   end
 
-
   factory :activity do
     name { Faker::Lorem.word }
     url { Faker::Internet.url }
