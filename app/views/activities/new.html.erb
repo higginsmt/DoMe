@@ -1,33 +1,34 @@
-<h2>Suggest an Activity</h2>
+<div class="container">
 
-<p>Your activity should be fun, spontaneous, and under $30.</p>
+  <h2>Suggest an Activity</h2>
 
-<div class="input_form">
+  <p>Your activity should be fun, spontaneous, and under $30.</p>
+  <div class="input_form">
 
-  <%= form_for @activity do |f| %>
+    <%= form_for @activity do |f| %>
 
-    <div class="input_row">
-      <%= f.label :name, "Name", class: "input_label" %>
-      <%= f.text_field :name, placeholder: "short and informative", class: "input_box" %>
-    </div>
+      <div class="input_row">
+        <%= f.label :name, "Name", class: "input_label" %>
+        <%= f.text_field :name, placeholder: "short and informative", class: "input_box" %>
+      </div>
 
-    <div class="input_row">
-      <%= f.label :blurb, "Description", class: "input_label"  %>
-      <%= f.text_field :blurb, placeholder: "explain your activity", class: "input_box" %>
-    </div>
+      <div class="input_row">
+        <%= f.label :blurb, "Description", class: "input_label"  %>
+        <%= f.text_field :blurb, placeholder: "explain your activity", class: "input_box" %>
+      </div>
 
-    <div class="input_row">
-      <%= f.label :url, "URL", class: "input_label"  %>
-      <%= f.text_field :url, placeholder: "related link (optional)", class: "input_box" %>
-    </div>
+      <div class="input_row">
+        <%= f.label :url, "URL", class: "input_label"  %>
+        <%= f.text_field :url, placeholder: "related link (optional)", class: "input_box" %>
+      </div>
 
-    <div class="input_row">
-      <%= f.label :things_needed, "Things Needed", class: "input_label"  %>
-      <%= f.text_field :things_needed, placeholder: "cost, materials, etc.", class: "input_box" %>
-    </div>
+      <div class="input_row">
+        <%= f.label :things_needed, "Things Needed", class: "input_label"  %>
+        <%= f.text_field :things_needed, placeholder: "cost, materials, etc.", class: "input_box" %>
+      </div>
 
-    <%= f.submit "Submit", class: "submit_activity" %>
+      <%= f.submit "Submit", class: "submit_activity" %>
 
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
