@@ -47,6 +47,7 @@ end
 feature 'Visitor submits new activity unsuccessfully' do
 
   scenario 'after sign in because they left some fields blank' do
+    @user = create(:user)
     visit root_path
     click_link 'Suggest an activity'
     fill_in 'Name', with: 'whoo'

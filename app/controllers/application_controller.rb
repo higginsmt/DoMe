@@ -7,8 +7,12 @@ class ApplicationController < ActionController::Base
     if session[:activity_params].present?
       session[:activity_params][:user_id] = current_user.id
       @activity = Activity.new(session[:activity_params])
-      @activity.save
-      activity_path(@activity)
+       if !@activity.save
+        flash[:error] = @activity.errors.full_messages.join(", ")
+        new_activity_path(@activity)
+      else
+        activity_path(@activity)
+      end
     else
       session[:previous_url] || root_path
     end
