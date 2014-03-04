@@ -1,33 +1,31 @@
 $(document).ready(function(){
-  $('#next-activity').click(Deck.renderCard);
-})
-
-var Deck = Deck || {};
-
-Deck.renderCard = function(event) {
   $.ajax({
     url: '/',
     type: 'GET',
     dataType: 'json'
   })
   .done(function(data) {
-    console.log(data);
-    var $featureSpace = $('#feature-space'),
-    $cardHTML = $("<p>" + data[1].name + "</p>");
-
-    $featureSpace.empty();
-    $featureSpace.append($cardHTML);
-  })
-  .fail(function() {
-    console.log("error");
-  })
-  .always(function() {
-    console.log("complete");
+    Deck.storeData(data);
   });
+  $('#next-activity').click(Deck.renderCard.bind(Deck));
+})
 
-  debugger
+var Deck = Deck || {
+  current_card: 0,
+  cards: []
+};
 
+Deck.storeData = function(data) {
+  Deck.cards = data;
+}
 
+Deck.renderCard = function(e) {
+  var $featureSpace = $('#feature-space'),
+      $cardHTML = $("<p>" + this.cards[this.current_card].name + "</p>");
 
-  debugger
+  $cardHTML.text = this.card;
+  console.log(this.current_card);
+  this.current_card++;
+  $featureSpace.empty();
+  $featureSpace.append($cardHTML);
 }
