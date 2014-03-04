@@ -3,7 +3,6 @@ require 'spec_helper'
 feature 'User signs in' do
 
     background do
-        @activity = create(:activity)
         @user = create(:user)
         visit root_path
         click_link 'Sign in'

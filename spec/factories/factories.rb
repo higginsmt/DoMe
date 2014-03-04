@@ -5,9 +5,10 @@ FactoryGirl.define do
   end
 
   factory :activity do
+    user_id
     name { Faker::Lorem.word }
     url { Faker::Internet.url }
-    blurb { Faker::Lorem.words.join }
-    things_needed { Faker::Lorem.words }
+    blurb { Faker::Lorem.words }
+    things_needed 'hi'
   end
 end
