@@ -14,6 +14,10 @@ class ActivitiesController < ApplicationController
   def about
   end
 
+  def index
+
+  end
+
   def new
     @activity = Activity.new
   end

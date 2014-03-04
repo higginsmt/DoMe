@@ -1,5 +1,5 @@
 class Activity < ActiveRecord::Base
-  belongs_to :creator, foreign_key: :user_id # the user who submitted the activity, there can only be one
+  belongs_to :creator, foreign_key: :user_id, class_name: 'User' # the user who submitted the activity, there can only be one
   has_many :adventures
   has_many :completed_users, through: :adventures, source: :user
 

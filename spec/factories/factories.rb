@@ -4,11 +4,12 @@ FactoryGirl.define do
     password 'swordfish'
   end
 
+
   factory :activity do
-    user
     name { Faker::Lorem.word }
     url { Faker::Internet.url }
     blurb { Faker::Lorem.words }
     things_needed { Faker::Lorem.words }
+    # association :creator, factory: :user
   end
 end
