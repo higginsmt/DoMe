@@ -26,7 +26,6 @@ Deck.renderCard = function(e) {
                   + "<p> Things you'll need: " + this.cards[this.current_card].things_needed + "</p>"
                   + "<p><a href="+ this.cards[this.current_card].url +">" + this.cards[this.current_card].url + "</a></p>"
                   + "<p> <button id='do-it-button'> Do me! </button>"
-
         );
 
   console.log(this.current_card);
