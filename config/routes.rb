@@ -3,4 +3,5 @@ DoMe::Application.routes.draw do
   root to: 'activities#home'
   get 'activities/about', to: 'activities#about'
   resources :activities
+  resources :adventures
 end
