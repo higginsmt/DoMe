@@ -51,6 +51,7 @@ Deck.renderDoIt = function(event) {
   // emptying the div and redisplaying info is optional
   // but may be useful if we want to display different info here
   $('#activity-card').empty();
+  $('#what-should-i-do-today').empty();
   $('#activity-card').append(Deck.doItHTML());
   Deck.calculateHMSleft();
   setInterval(Deck.calculateHMSleft, 1000);
