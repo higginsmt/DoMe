@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140302203410) do
     t.text     "blurb"
     t.text     "url"
     t.text     "things_needed"
+    t.text     "map"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

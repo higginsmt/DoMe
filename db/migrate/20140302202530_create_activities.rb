@@ -5,6 +5,7 @@ class CreateActivities < ActiveRecord::Migration
       t.text :blurb
       t.text :url
       t.text :things_needed
+      t.text :map
       t.references :user, index: true
 
       t.timestamps
