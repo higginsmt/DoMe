@@ -51,3 +51,23 @@ nav ul li {
 #story-submit {
   display: block;
 }
+
+table{
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 750px;
+  text-align: left;
+}
+
+th, td {
+  overflow: hidden;
+  width: 250px;
+  margin: 0;
+  border-bottom: 1px solid LightGray;
+}
+
+th {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
