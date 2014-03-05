@@ -1,1 +1,13 @@
-hi!
+<h2><%= @activity.name %></h2>
+
+<h3>Congratulations! You did it! </h3>
+
+<p>What was your adventure like? Did you enjoy it? Read others' stories and share your own!</p>
+
+
+
+<p>Stories</p>
+
+<% @stories.each do |story| %>
+  <p><%= story %></p>
+<% end %>
