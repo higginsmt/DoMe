@@ -18,13 +18,13 @@ nav ul li {
 
 #activity-card {
   background-color: LightGoldenRodYellow;
-  width: 500px;
+/*  width: 500px;
   padding: 20px;
   border-radius: 15px;
   text-align: left;
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;*/
 }
 
 .activity-name {
