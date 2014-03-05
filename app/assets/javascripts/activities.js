@@ -50,10 +50,12 @@ Deck.getNextCard = function() {
 };
 
 Deck.renderCardHTML = function() {
-  var HTML = "<p class='activity-name'>" + Deck.cards[Deck.current_card].name + "</p>"
-                  + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
-                  + "<p><a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
-                  + "<button id='do-it-button'>Do me!</button>";
+  var HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
+              + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
+              + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
+              + "<div class='text-center' id='do-it'>"
+                + "<button id='do-it-button' class='btn btn-lg btn-success'>Do me!</button>"
+              + "</div>";
   return HTML;
 };
 

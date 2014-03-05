@@ -91,3 +91,17 @@ h2 {
 #user-info:hover {
   color: #777777;
 }
+
+#blurb {
+  margin-top: 20px;
+}
+
+#url a {
+  color: #39b3d7;
+}
+
+#do-it{ /*div containing the do-it button*/
+  margin-top: 30px;
+}
+
+
