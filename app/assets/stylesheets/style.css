@@ -88,3 +88,6 @@ h2 {
   margin-top: 18px;
 }
 
+#user-info:hover {
+  color: #777777;
+}
