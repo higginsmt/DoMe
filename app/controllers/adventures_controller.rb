@@ -1,6 +1,7 @@
 class AdventuresController < ApplicationController
 
   def index
+    @adventures = Adventure.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def new
