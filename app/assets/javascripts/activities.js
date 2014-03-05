@@ -87,16 +87,30 @@ Deck.renderDidIt = function(event) {
 };
 
 Deck.createStory = function(event) {
+
+  var activity_id = $('#activity-name').attr('data-activity-id'),
+      adventure_id = $('#activity-name').attr('data-adventure-id'),
+      user_id = $('#user-info').attr('data-user-id'),
+      story_body = $('#story-body').val();
+
   event.preventDefault();
 
-  // $.ajax({
-  //   type: 'POST',
-  //   url: '/adventures/new',
-  //   data: { activity_id: id }
-  // })
-  // .done(function(data){
-  //   window.location.href = '/adventures/activity/' + id // send to show page for adventure
-  // });
+  $.ajax({
+    type: 'POST',
+    url: '/adventures/activity/' + activity_id,
+    data: { activity_id: activity_id, adventure_id: adventure_id, user_id: user_id, story_body: story_body }
+  })
+  .done(function(data){
+      // data is currently the adventure
+      var storyHTML = '<li>' + data.story + '</li>';
+
+      // get rid of story form (can only submit one story)
+      $('#new-story').empty();
+
+      // append story body to existing stories
+      $('#stories').append(storyHTML);
+
+  });
 
   return false;
 };

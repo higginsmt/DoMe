@@ -19,7 +19,11 @@ class AdventuresController < ApplicationController
   end
 
   def create_story
-    # @adventure =
+    @adventure = Adventure.find(params[:adventure_id])
+    @activity = Activity.find(params[:activity_id])
+    story_body = params[:story_body]
+    @adventure.update_attributes(story: story_body)
+    render json: @adventure # this now becomes "data" in javascript-land
   end
 
 end

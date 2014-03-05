@@ -1,4 +1,4 @@
-<h2><%= @activity.name %></h2>
+<h2 data-activity-id="<%= @activity.id %>" data-adventure-id="<%= @adventure.id %>" id="activity-name"><%= @activity.name %></h2>
 
 <h3>Congratulations! You did it! </h3>
 
@@ -13,6 +13,8 @@
 
 <h3>Stories</h3>
 
-<% @stories.each do |story| %>
-  <p><%= story %></p>
-<% end %>
+<ul id="stories">
+  <% @stories.each do |story| %>
+    <li><%= story %></li>
+  <% end %>
+</ul>
