@@ -1,0 +1,22 @@
+<h2 data-activity-id="<%= @activity.id %>" data-adventure-id="<%= @adventure.id %>" id="activity-name"><%= @activity.name %></h2>
+
+<h3>Congratulations! You did it! </h3>
+
+<p>What was your adventure like? Did you enjoy it? Read others' stories and share your own!</p>
+
+<form id="new-story">
+  <textarea id="story-body" placeholder="type your story here!"></textarea>
+  <input id="story-submit" type="submit">
+</form>
+
+<br>
+
+<h3>Stories</h3>
+
+<ul id="stories">
+  <% @stories.each do |story| %>
+    <% unless story.blank? %>
+      <li><%= story %></li>
+    <% end %>
+   <% end %>
+</ul>

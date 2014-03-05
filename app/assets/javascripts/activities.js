@@ -7,7 +7,9 @@ $(document).ready(function(){
   .done(function(data) {
     Deck.storeData(data);
   });
+
   $('#next-activity').click(Deck.renderCard.bind(Deck));
+  $('#story-submit').click(Deck.createStory);
 });
 
 var Deck = Deck || {
@@ -69,12 +71,47 @@ Deck.doItHTML = function() {
 };
 
 Deck.renderDidIt = function(event) {
-  // Deck.createAdventure();
-  location.href=$('#did-it-button').attr('href'); // redirects to /adventure/new, which triggers controller
+  var id = Deck.cards[Deck.current_card].id;
+  event.preventDefault();
+
+  $.ajax({
+    type: 'POST',
+    url: '/adventures/new',
+    data: { activity_id: id }
+  })
+  .done(function(data){
+    window.location.href = '/adventures/activity/' + id // send to show page for adventure
+  });
+
+  return false;
 };
 
-// // only saves if user is logged in, else display something like "login to save your adventure"
-// Deck.createAdventure = function() {
-//   var user_id = 2 || nil, // change this later! maybe this happens in the rails controller
-//       activity_id = Deck.cards[Deck.current_card].id
-// };
+Deck.createStory = function(event) {
+
+  var activity_id = $('#activity-name').attr('data-activity-id'),
+      adventure_id = $('#activity-name').attr('data-adventure-id'),
+      user_id = $('#user-info').attr('data-user-id'),
+      story_body = $('#story-body').val();
+
+  event.preventDefault();
+
+  $.ajax({
+    type: 'POST',
+    url: '/adventures/activity/' + activity_id,
+    data: { activity_id: activity_id, adventure_id: adventure_id, user_id: user_id, story_body: story_body }
+  })
+  .done(function(data){
+      // data is currently the adventure
+      var storyHTML = '<li>' + data.story + '</li>';
+
+      // get rid of story form (can only submit one story)
+      $('#new-story').empty();
+
+      // append story body to existing stories
+      $('#stories').prepend(storyHTML);
+
+  });
+
+  return false;
+};
+

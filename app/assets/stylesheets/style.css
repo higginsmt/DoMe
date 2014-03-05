@@ -41,4 +41,13 @@ nav ul li {
   margin-left: 30px;
 }
 
+#story-body {
+  width: 300px;
+  height: 150px;
+  font-family: sans-serif;
+  resize: none;
+}
 
+#story-submit {
+  display: block;
+}
