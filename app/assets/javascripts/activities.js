@@ -28,15 +28,14 @@ Deck.renderCard = function(e) {
       cardHTML;
   // Get the index of the card that previously displayed
   this.previous_card = this.current_card;
+  // Set Deck.next_card to a random index
   Deck.getNextCard();
-  // Set current card equal to a randomly generated index in the cards array
+  // Keep running Deck.getNextCard until next_card is not equal to previous_card
   while(this.previous_card === this.next_card) {
     Deck.getNextCard();
   };
+  // Set current_card equal to next_card
   this.current_card = this.next_card;
-
-  // If Deck.getNextCard() is not equal to previous_card, all good
-  // If Deck.getNextCard() is equal to previous card, run Deck.getNextCard again
   console.log(this.current_card);
   $featureSpace.empty();
   cardHTML = Deck.renderCardHTML();
@@ -44,7 +43,6 @@ Deck.renderCard = function(e) {
   // add an event listener for the DoMe button
   $('#do-it-button').click(Deck.renderDoIt);
 };
-
 
 // Function to generate a random index in the cards array
 Deck.getNextCard = function() {
