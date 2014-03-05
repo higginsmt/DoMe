@@ -49,6 +49,8 @@ Deck.renderDoIt = function(event) {
   // but may be useful if we want to display different info here
   $('#activity-card').empty();
   $('#activity-card').append(Deck.doItHTML());
+  Deck.calculateHMSleft();
+  setInterval(Deck.calculateHMSleft, 1000);
   // set click listener for the DidIt button
   $('#did-it-button').click(Deck.renderDidIt);
 };
@@ -63,7 +65,7 @@ Deck.doItHTML = function() {
                   + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
                   + "<p> Things you'll need: " + Deck.cards[Deck.current_card].things_needed + "</p>"
                   + "<p><a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
-                  + "<p> countdown timer goes here! </p>"
+                  + "<p id='HMSremaining'></p>"
                   + "<button id='did-it-button' href='/adventures/new'>I Did It!</button>";
   return HTML;
 };
@@ -80,3 +82,21 @@ Deck.renderDidIt = function(event) {
 
 
 // };
+
+Deck.calculateHMSleft = function() {
+  // calculate
+  var now = new Date(),
+    hoursleft = 23 - now.getHours(),
+    minutesleft = 59 - now.getMinutes(),
+    secondsleft = 59 - now.getSeconds();
+  //format 0 prefixes
+  if(hoursleft < 10){
+    hoursleft = "0" + hoursleft };
+  if(minutesleft < 10){
+    minutesleft = "0" + minutesleft };
+  if(secondsleft < 10){
+    secondsleft = "0" + secondsleft };
+
+  //display
+  $('#HMSremaining').html("Time left until midnight:" + hoursleft + ":" + minutesleft + ":" + secondsleft);
+}
