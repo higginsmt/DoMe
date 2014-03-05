@@ -25,14 +25,15 @@ Deck.renderCard = function(e) {
       cardHTML = Deck.renderCardHTML();
 
   console.log(this.current_card);
-  if (Deck.current_card === Deck.cards.length - 1) {
-    Deck.current_card = -1;
-  };
+  this.current_card = Deck.getNextCard();
   $featureSpace.empty();
   $featureSpace.append(cardHTML);
-  this.current_card = Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
   // add an event listener for the DoMe button
   $('#do-it-button').click(Deck.renderDoIt);
+};
+
+Deck.getNextCard = function() {
+  return Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
 };
 
 Deck.renderCardHTML = function() {
