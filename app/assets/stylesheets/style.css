@@ -40,6 +40,12 @@ nav ul li {
   text-align: center;
 }
 
+#HMSremaining {
+  text-align: center;
+  font-weight: bold;
+  font-size: 32pt;
+}
+
 .input_row {
   margin: 30px;
 }

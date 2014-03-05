@@ -13,5 +13,5 @@ Deck.calculateHMSleft = function() {
     secondsleft = "0" + secondsleft };
 
   // Display the countdown in the 'Do It' page
-  $('#HMSremaining').html("Time left until midnight:" + hoursleft + ":" + minutesleft + ":" + secondsleft);
+  $('#HMSremaining').html(hoursleft + ":" + minutesleft + ":" + secondsleft);
 };

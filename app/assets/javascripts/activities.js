@@ -75,8 +75,10 @@ Deck.doItHTML = function() {
                   + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
                   + "<p> Things you'll need: " + Deck.cards[Deck.current_card].things_needed + "</p>"
                   + "<p><a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
+                  + "<p class='centered'> Whoa! You'd better get going, there's only </p>"
                   + "<p id='HMSremaining'></p>"
-                  + "<div class='centered'>" + Deck.cards[Deck.current_card].map + "</div>"
+                  + "<p class='centered'> left to have this adventure today! </p>"
+                  + "<p><div class='centered'>" + Deck.cards[Deck.current_card].map + "</div></p>"
                   + "<button id='did-it-button' href='/adventures/new'>I Did It!</button>";
   return HTML;
 };
