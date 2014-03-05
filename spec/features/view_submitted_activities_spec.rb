@@ -9,7 +9,7 @@ feature 'User views submitted activities' do
     fill_in 'Description', with: 'Jam some tunes!'
     fill_in 'Things Needed', with: 'Guitar!'
     click_button 'Submit'
-    click_link 'View my submissions'
+    click_link 'Your suggestions'
     expect(page).to have_content("Play guitar!")
   end
 end
