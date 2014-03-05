@@ -3,5 +3,7 @@ DoMe::Application.routes.draw do
   root to: 'activities#home'
   get 'activities/about', to: 'activities#about'
   resources :activities
-  resources :adventures
+  post 'adventures/new', to: 'adventures#new' # saves adventure to database, then redirects
+  get 'adventures/activity/:id', to: 'adventures#update', as: 'adventure_stories' # empty form for story (submission will be ajaxy)
+  get 'adventures', to: 'adventures#index', as: 'user_adventures'
 end
