@@ -8,7 +8,6 @@ $(document).ready(function(){
     Deck.storeData(data);
   });
   $('#next-activity').click(Deck.renderCard.bind(Deck));
-
 });
 
 var Deck = Deck || {
@@ -23,7 +22,7 @@ Deck.storeData = function(data) {
 Deck.renderCard = function(e) {
   var $featureSpace = $('#activity-card'),
       cardHTML;
-
+  // Set current card equal to a randomly generated index in the cards array
   this.current_card = Deck.getNextCard();
   console.log(this.current_card);
   $featureSpace.empty();
@@ -33,6 +32,7 @@ Deck.renderCard = function(e) {
   $('#do-it-button').click(Deck.renderDoIt);
 };
 
+// Function to generate a random index in the cards array
 Deck.getNextCard = function() {
   return Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
 };
@@ -58,9 +58,6 @@ Deck.renderDoIt = function(event) {
 
 Deck.doItHTML = function() {
   var HTML;
-
-  // this is kind of a hack to undo the incrementing counter at the end of Deck.renderCard()
-
   HTML = "<p class='activity-name'>" + Deck.cards[Deck.current_card].name + "</p>"
                   + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
                   + "<p> Things you'll need: " + Deck.cards[Deck.current_card].things_needed + "</p>"
@@ -82,12 +79,12 @@ Deck.renderDidIt = function(event) {
 // };
 
 Deck.calculateHMSleft = function() {
-  // calculate
+  // Calculate how many hours, minutes and seconds left until the end of the day
   var now = new Date(),
     hoursleft = 23 - now.getHours(),
     minutesleft = 59 - now.getMinutes(),
     secondsleft = 59 - now.getSeconds();
-  //format 0 prefixes
+  // Format 0 prefixes
   if(hoursleft < 10){
     hoursleft = "0" + hoursleft };
   if(minutesleft < 10){
@@ -95,6 +92,6 @@ Deck.calculateHMSleft = function() {
   if(secondsleft < 10){
     secondsleft = "0" + secondsleft };
 
-  //display
+  // Display the countdown in the 'Do It' page
   $('#HMSremaining').html("Time left until midnight:" + hoursleft + ":" + minutesleft + ":" + secondsleft);
 }
