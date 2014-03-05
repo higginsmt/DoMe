@@ -24,6 +24,7 @@ group :test do
   gem 'launchy'   # Opens app in a broswer
   gem 'faker'     # Populates fake data
   gem 'simplecov', '~> 0.7.1', require: false
+  gem 'poltergeist'
 end
 
 group :development, :test do
