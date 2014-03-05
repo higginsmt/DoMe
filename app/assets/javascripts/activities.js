@@ -22,11 +22,12 @@ Deck.storeData = function(data) {
 
 Deck.renderCard = function(e) {
   var $featureSpace = $('#activity-card'),
-      cardHTML = Deck.renderCardHTML();
+      cardHTML;
 
-  console.log(this.current_card);
   this.current_card = Deck.getNextCard();
+  console.log(this.current_card);
   $featureSpace.empty();
+  cardHTML = Deck.renderCardHTML();
   $featureSpace.append(cardHTML);
   // add an event listener for the DoMe button
   $('#do-it-button').click(Deck.renderDoIt);
@@ -59,7 +60,6 @@ Deck.doItHTML = function() {
   var HTML;
 
   // this is kind of a hack to undo the incrementing counter at the end of Deck.renderCard()
-  // Deck.current_card = Deck.current_card - 1;
 
   HTML = "<p class='activity-name'>" + Deck.cards[Deck.current_card].name + "</p>"
                   + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
@@ -79,8 +79,6 @@ Deck.renderDidIt = function(event) {
 // Deck.createAdventure = function() {
 //   var user_id = 2 || nil, // change this later! maybe this happens in the rails controller
 //       activity_id = Deck.cards[Deck.current_card].id
-
-
 // };
 
 Deck.calculateHMSleft = function() {
