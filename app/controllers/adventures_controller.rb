@@ -12,7 +12,7 @@ class AdventuresController < ApplicationController
   def update # show page for adventure with empty story form
     @adventure = Adventure.where(user_id: current_user.id, activity_id: params[:id]).first # the .first is if "did" the activity more than once
     @activity = Activity.find(params[:id])
-    all_adventures = Adventure.where(activity_id: params[:id]).all
+    all_adventures = Adventure.where(activity_id: params[:id]).order(updated_at: :desc)
     @stories = all_adventures.map do |adventure|
       adventure[:story]
     end

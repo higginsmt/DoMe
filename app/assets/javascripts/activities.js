@@ -108,7 +108,7 @@ Deck.createStory = function(event) {
       $('#new-story').empty();
 
       // append story body to existing stories
-      $('#stories').append(storyHTML);
+      $('#stories').prepend(storyHTML);
 
   });
 
