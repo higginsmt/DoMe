@@ -40,7 +40,7 @@ Deck.getNextCard = function() {
 };
 
 Deck.renderCardHTML = function() {
-  var HTML = "<p class='activity-name'>" + Deck.cards[Deck.current_card].name + "</p>"
+  var HTML = "<h2>" + Deck.cards[Deck.current_card].name + "</h2>"
                   + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
                   + "<p><a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
                   + "<button id='do-it-button'>Do me!</button>";
@@ -60,7 +60,7 @@ Deck.renderDoIt = function(event) {
 
 Deck.doItHTML = function() {
   var HTML;
-  HTML = "<p class='activity-name'>" + Deck.cards[Deck.current_card].name + "</p>"
+  HTML = "<h2>" + Deck.cards[Deck.current_card].name + "</h2>"
                   + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
                   + "<p> Things you'll need: " + Deck.cards[Deck.current_card].things_needed + "</p>"
                   + "<p><a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"

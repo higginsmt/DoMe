@@ -1,12 +1,14 @@
-<p>Your activity has been successfully submitted!</p>
+<div class='container'>
+  <p>Your activity has been successfully submitted!</p>
 
-<h2>Activity: <%= @activity.name %></h2>
+  <h2>Activity: <%= @activity.name %></h2>
 
-<ul>
-  <li>Description: <%= @activity.blurb %></li>
-  <li>Link: <%= @activity.url %></li>
-  <li>Things Needed: <%= @activity.things_needed %></li>
-</ul>
+  <ul>
+    <li>Description: <%= @activity.blurb %></li>
+    <li>Link: <%= @activity.url %></li>
+    <li>Things Needed: <%= @activity.things_needed %></li>
+  </ul>
 
-<p><%= link_to "Back to Home", root_path %></p>
+  <p><%= link_to "Back to Home", root_path %></p>
+</div>
 
