@@ -49,4 +49,5 @@ group :development do
   # gem 'rack-mini-profiler'  # for load times
   gem 'rails-erd', require: false   # makes model diagrams
   gem 'rails_best_practices', require: false
+  gem 'coffee-rails-source-maps'
 end
