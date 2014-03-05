@@ -28,10 +28,9 @@ Deck.renderCard = function(e) {
   if (Deck.current_card === Deck.cards.length - 1) {
     Deck.current_card = -1;
   };
-  this.current_card++;
   $featureSpace.empty();
   $featureSpace.append(cardHTML);
-
+  this.current_card = Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
   // add an event listener for the DoMe button
   $('#do-it-button').click(Deck.renderDoIt);
 };
@@ -59,7 +58,7 @@ Deck.doItHTML = function() {
   var HTML;
 
   // this is kind of a hack to undo the incrementing counter at the end of Deck.renderCard()
-  Deck.current_card = Deck.current_card - 1;
+  // Deck.current_card = Deck.current_card - 1;
 
   HTML = "<p class='activity-name'>" + Deck.cards[Deck.current_card].name + "</p>"
                   + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
