@@ -16,23 +16,6 @@ nav ul li {
   text-align: center;
 }
 
-#activity-card {
-  background-color: LightGoldenRodYellow;
-/*  width: 500px;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: left;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;*/
-}
-
-.activity-name {
-  color: purple;
-  font-size: 22pt;
-  text-align: center;
-}
-
 .input_row {
   margin: 30px;
 }
@@ -72,6 +55,27 @@ th {
   font-size: 20px;
 }
 
+#activity-card {
+  background-color: rgb(111, 84, 153);
+  background-image: linear-gradient(rgb(86, 61, 124) 0px, rgb(111, 84, 153) 100%);
+  background-repeat: repeat-x;
+  border-radius: 15px;
+  padding: 30px 40px; /*tops, sides*/
+  color: white;
+}
+
+
+h1 {
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 #what-should-i-do-today {
   text-align: center;
+  margin-top: 30px;
 }
