@@ -14,7 +14,9 @@ $(document).ready(function(){
 
 var Deck = Deck || {
   current_card: 0,
-  cards: []
+  cards: [],
+  previous_card: 0,
+  next_card: null
 };
 
 Deck.storeData = function(data) {
@@ -24,8 +26,17 @@ Deck.storeData = function(data) {
 Deck.renderCard = function(e) {
   var $featureSpace = $('#activity-card'),
       cardHTML;
+  // Get the index of the card that previously displayed
+  this.previous_card = this.current_card;
+  Deck.getNextCard();
   // Set current card equal to a randomly generated index in the cards array
-  this.current_card = Deck.getNextCard();
+  while(this.previous_card === this.next_card) {
+    Deck.getNextCard();
+  };
+  this.current_card = this.next_card;
+
+  // If Deck.getNextCard() is not equal to previous_card, all good
+  // If Deck.getNextCard() is equal to previous card, run Deck.getNextCard again
   console.log(this.current_card);
   $featureSpace.empty();
   cardHTML = Deck.renderCardHTML();
@@ -34,9 +45,10 @@ Deck.renderCard = function(e) {
   $('#do-it-button').click(Deck.renderDoIt);
 };
 
+
 // Function to generate a random index in the cards array
 Deck.getNextCard = function() {
-  return Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
+  Deck.next_card = Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
 };
 
 Deck.renderCardHTML = function() {
