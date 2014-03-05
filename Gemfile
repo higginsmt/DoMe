@@ -23,6 +23,7 @@ group :test do
   gem 'capybara'  # Simulates a user clicking things in your app (testing)
   gem 'launchy'   # Opens app in a broswer
   gem 'faker'     # Populates fake data
+  gem 'simplecov', require: false
 end
 
 group :development, :test do
