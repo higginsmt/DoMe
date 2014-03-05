@@ -14,7 +14,9 @@ $(document).ready(function(){
 
 var Deck = Deck || {
   current_card: 0,
-  cards: []
+  cards: [],
+  previous_card: 0,
+  next_card: null
 };
 
 Deck.storeData = function(data) {
@@ -24,8 +26,16 @@ Deck.storeData = function(data) {
 Deck.renderCard = function(e) {
   var $featureSpace = $('#activity-card'),
       cardHTML;
-  // Set current card equal to a randomly generated index in the cards array
-  this.current_card = Deck.getNextCard();
+  // Get the index of the card that previously displayed
+  this.previous_card = this.current_card;
+  // Set Deck.next_card to a random index
+  Deck.getNextCard();
+  // Keep running Deck.getNextCard until next_card is not equal to previous_card
+  while(this.previous_card === this.next_card) {
+    Deck.getNextCard();
+  };
+  // Set current_card equal to next_card
+  this.current_card = this.next_card;
   console.log(this.current_card);
   $featureSpace.empty();
   cardHTML = Deck.renderCardHTML();
@@ -36,7 +46,7 @@ Deck.renderCard = function(e) {
 
 // Function to generate a random index in the cards array
 Deck.getNextCard = function() {
-  return Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
+  Deck.next_card = Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
 };
 
 Deck.renderCardHTML = function() {
@@ -51,6 +61,7 @@ Deck.renderDoIt = function(event) {
   // emptying the div and redisplaying info is optional
   // but may be useful if we want to display different info here
   $('#activity-card').empty();
+  $('#what-should-i-do-today').empty();
   $('#activity-card').append(Deck.doItHTML());
   Deck.calculateHMSleft();
   setInterval(Deck.calculateHMSleft, 1000);
