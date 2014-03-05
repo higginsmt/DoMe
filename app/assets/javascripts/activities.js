@@ -7,8 +7,10 @@ $(document).ready(function(){
   .done(function(data) {
     Deck.storeData(data);
   });
-  $('#next-activity').click(Deck.renderCard.bind(Deck));
 
+  // event listeners
+  $('#next-activity').click(Deck.renderCard.bind(Deck));
+  $('#story-submit').click(Deck.createStory);
 });
 
 var Deck = Deck || {
@@ -24,11 +26,11 @@ Deck.renderCard = function(e) {
   var $featureSpace = $('#activity-card'),
       cardHTML = Deck.renderCardHTML();
 
-  console.log(this.current_card);
+  console.log(Deck.current_card);
   if (Deck.current_card === Deck.cards.length - 1) {
     Deck.current_card = -1;
   };
-  this.current_card++;
+  Deck.current_card++;
   $featureSpace.empty();
   $featureSpace.append(cardHTML);
 
@@ -69,7 +71,6 @@ Deck.doItHTML = function() {
 };
 
 Deck.renderDidIt = function(event) {
-  // location.href=$('#did-it-button').attr('href'); // redirects to /adventure/new, which triggers controller
   var id = Deck.cards[Deck.current_card].id;
   event.preventDefault();
 
@@ -77,12 +78,25 @@ Deck.renderDidIt = function(event) {
     type: 'POST',
     url: '/adventures/new',
     data: { activity_id: id }
-  }) // end ajax request
+  })
   .done(function(data){
-    console.log('success yo!');
     window.location.href = '/adventures/activity/' + id // send to show page for adventure
-  }); // end ajax post request
+  });
 
   return false;
+};
 
-}; // end .renderDidIt
+Deck.createStory = function(event) {
+  event.preventDefault();
+
+  // $.ajax({
+  //   type: 'POST',
+  //   url: '/adventures/new',
+  //   data: { activity_id: id }
+  // })
+  // .done(function(data){
+  //   window.location.href = '/adventures/activity/' + id // send to show page for adventure
+  // });
+
+  return false;
+};

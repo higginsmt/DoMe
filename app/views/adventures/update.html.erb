@@ -4,9 +4,14 @@
 
 <p>What was your adventure like? Did you enjoy it? Read others' stories and share your own!</p>
 
+<form id="new-story">
+  <textarea id="story-body" placeholder="type your story here!"></textarea>
+  <input id="story-submit" type="submit">
+</form>
 
+<br>
 
-<p>Stories</p>
+<h3>Stories</h3>
 
 <% @stories.each do |story| %>
   <p><%= story %></p>
