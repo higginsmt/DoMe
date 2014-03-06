@@ -1,6 +1,23 @@
-<h1>My Submissions</h1>
-<p>
-<% @submitted.each do |submission| %>
-  <%= submission.name %><br>
-<% end %>
-</p>
+<div class="container">
+
+  <div class="feature-space col-sm-8 col-sm-offset-2">
+
+    <h2>My Submissions</h2>
+
+     <table id="activity-submissions" class="table">
+      <tr id="table-headings">
+        <th>Activity</th>
+        <th>Desc</th>
+        <th>Link</th>
+      </tr>
+      <% @submitted.each do |submission| %>
+        <tr>
+          <td><%= submission.name %></td>
+          <td><%= submission.blurb.truncate(50, separator: ' ') %></td>
+          <td><%= submission.url.truncate(50) %></td>
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>
