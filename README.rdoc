@@ -1,28 +1,9 @@
-== README
+# Do Me! Boston
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+co-conspirators: [tsyan](http://github.com/tsyan), [higginsmt](http://github.com/higginsmt), [LaureMFischer](http://github.com/LaureMFischer)
 
-Things you may want to cover:
+* Do Me! is a quick and easy way to decide what to do today.
 
-* Ruby version
+* Click the "What should I do today?" button to display a single, simple idea for something to do.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* When you see one you like, click the "Do me!" button to dive in!
