@@ -24,6 +24,8 @@ group :test do
   gem 'capybara'  # Simulates a user clicking things in your app (testing)
   gem 'launchy'   # Opens app in a broswer
   gem 'faker'     # Populates fake data
+  gem 'simplecov', '~> 0.7.1', require: false
+  gem 'poltergeist'
 end
 
 group :development, :test do
@@ -34,7 +36,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
-  gem 'coffee-rails-source-maps'
   gem 'factory_girl_rails'
 end
 
@@ -48,4 +49,5 @@ group :development do
   # gem 'rack-mini-profiler'  # for load times
   gem 'rails-erd', require: false   # makes model diagrams
   gem 'rails_best_practices', require: false
+  gem 'coffee-rails-source-maps'
 end
