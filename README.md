@@ -1,5 +1,3 @@
-==README
-
 # Do Me! Boston
 
 co-conspirators: [tsyan](http://github.com/tsyan), [higginsmt](http://github.com/higginsmt), [LaureMFischer](http://github.com/LaureMFischer)
