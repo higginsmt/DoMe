@@ -6,6 +6,49 @@ body {
   margin-top: 50px;
 }
 
+
+.feature-space {
+/*  background-color: rgb(111, 84, 153);
+  background-image: linear-gradient(rgb(86, 61, 124) 0px, rgb(111, 84, 153) 100%);
+  background-repeat: repeat-x;
+  border-radius: 15px;*/
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  padding: 20px 20px 20px 20px;
+  color: #777777;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+#what-should-i-do-today {
+  margin-top: 30px;
+  padding: 5px;
+}
+
+#next-activity {
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 37px 13px rgba(0,0,0,0.5);
+}
+
+.btn {
+  border-radius: 15px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.btn-md {
+  background-color: #c3a7db;
+}
+
+.container {
+  max-width: 600px;
+  min-width: 55%;
+}
+
+.centered {
+  text-align: center;
+}
+
 /*#transparent-bg {
   background-color: rgba(0,255,255,0.9);
   display: block;
@@ -26,31 +69,21 @@ body {
   color: #777777;
 }
 
-/* basic purple box */
 
-.feature-space {
-/*  background-color: rgb(111, 84, 153);
-  background-image: linear-gradient(rgb(86, 61, 124) 0px, rgb(111, 84, 153) 100%);
-  background-repeat: repeat-x;
-  border-radius: 15px;*/
-  background-color: rgba(255,255,255,0.7);
-  border-radius: 15px;
-  padding: 5px 20px; /* tops, sides */
-  color: #777777;
-  margin-top: 60px;
-  margin-bottom: 30px;
-}
-
-/* typography */
 
 h1#app-name {
-  font-size: 50px;
+  font-size: 80px;
   font-weight: normal;
   text-align: center;
   /*color: white;*/
   text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
   margin-top: 10px;
   margin-bottom: 20px;
+  color: #6923A7;
+}
+
+#app-description {
+  padding: 30px;
 }
 
 h2 {
@@ -63,10 +96,7 @@ p {
 
 /* activity card and do it page */
 
-#what-should-i-do-today {
-  text-align: center;
-  padding: 0;
-}
+
 
 #blurb {
   margin-top: 20px;
@@ -149,12 +179,6 @@ p {
   border-top: none;
 }
 
-.btn {
-  /*border-radius: 20px;*/
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-}
-
-#next-activity {
-  background-color: #ffff80;
-  color: white;
+.input_form {
+  padding-right: 20px;
 }
