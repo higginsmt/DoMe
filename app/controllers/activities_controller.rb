@@ -29,9 +29,10 @@ class ActivitiesController < ApplicationController
     else
       @activity = Activity.new(activity_params)
       if !@activity.save
-        flash[:error] = @activity.errors.full_messages.join(", ")
+        flash.now[:error] = @activity.errors.full_messages.join(", ")
         render :new
       else
+        flash[:success] = "Your activity has been submitted successfully!"
         redirect_to activity_path(@activity)
       end
     end

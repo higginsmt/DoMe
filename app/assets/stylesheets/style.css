@@ -54,6 +54,7 @@ th {
   border-radius: 15px;
   padding: 30px 40px; /*tops, sides*/
   color: white;
+  margin-bottom: 30px;
 }
 
 #activity-card {
