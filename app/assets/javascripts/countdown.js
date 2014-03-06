@@ -3,7 +3,8 @@ Deck.calculateHMSleft = function() {
   var now = new Date(),
     hoursleft = 23 - now.getHours(),
     minutesleft = 59 - now.getMinutes(),
-    secondsleft = 59 - now.getSeconds();
+    secondsleft = 59 - now.getSeconds(),
+    HTML = '';
   // Format 0 prefixes
   if(hoursleft < 10){
     hoursleft = "0" + hoursleft };
@@ -12,6 +13,13 @@ Deck.calculateHMSleft = function() {
   if(secondsleft < 10){
     secondsleft = "0" + secondsleft };
 
+  HTML = "<p class='countdown-text'>Whoa! You'd better get going, there's only</p>"
+          + "<div id='countdown-timer'>" + hoursleft + ":" + minutesleft + ":" + secondsleft + "</div>"
+          + "<p class='countdown-text'>hours left to have this adventure today! </p>";
+
   // Display the countdown in the 'Do It' page
-  $('#HMSremaining').html("Time left until midnight:" + hoursleft + ":" + minutesleft + ":" + secondsleft);
+  $('#HMSremaining').html(HTML);
+
+  return false;
 };
+

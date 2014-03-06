@@ -70,6 +70,10 @@ h1 {
   margin-bottom: 20px;
 }
 
+p {
+  font-size: 115%;
+}
+
 #what-should-i-do-today {
   text-align: center;
   margin-top: 30px;
@@ -100,8 +104,44 @@ h2 {
   color: #39b3d7;
 }
 
-#do-it{ /*div containing the do-it button*/
+#do-it { /*div containing the do-it button*/
   margin-top: 30px;
 }
 
+#HMSremaining {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
+.countdown-text {
+  font-size: 20px;
+}
+
+#countdown-timer {
+  font-size: 72px;
+  text-align: center;
+  margin: -10px;
+}
+
+#did-it { /*div containing the did-it button*/
+  margin-top: 30px;
+}
+
+#google-map a {
+  color: #39b3d7;
+}
+
+#flash-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+#flash-alert {
+
+}
+
+#flash-error {
+
+}
