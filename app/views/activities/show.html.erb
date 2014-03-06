@@ -6,7 +6,7 @@
     <p id="blurb">Description: <%= @activity.blurb %></p>
     <p id="url">More info: <%= link_to @activity.url, @activity.url %></p>
     <p id="things-needed">Things You'll Need: <%= @activity.things_needed %></p>
-    <div id="map"> map will go here </div>
+    <div id="google-map" class="text-center"><%= @activity.map.html_safe %> </div>
 
   </div>
 

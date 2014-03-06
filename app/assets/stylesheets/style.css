@@ -75,8 +75,13 @@ p {
   margin: -10px;
 }
 
-#google-map a { /* doesn't work yet, needs parsing of user map input */
-  color: #39b3d7;
+#google-map {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#google-map a {
+  color: white;
 }
 
 #did-it { /* div containing the did-it button */
