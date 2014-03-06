@@ -14,30 +14,30 @@ body {
   border-radius: 15px;*/
   background-color: rgba(255,255,255,0.9);
   border-radius: 15px;
-  padding: 10px 30px; /* tops, sides */
+  padding: 20px 20px 20px 20px;
   color: #777777;
   margin-top: 30px;
   margin-bottom: 30px;
+
 }
 
 #what-should-i-do-today {
-  text-align: center;
   margin-top: 30px;
   padding: 5px;
 }
 
 #next-activity {
   background-color: rgba(255,255,255,0.9);
-  color: purple;
+  box-shadow: 0 0 37px 13px rgba(0,0,0,0.5);
 }
 
 .btn {
-  /*border-radius: 20px;*/
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  border-radius: 15px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
 .btn-md {
-  background-color: purple;
+  background-color: #c3a7db;
 }
 
 .container {
@@ -79,7 +79,7 @@ h1#app-name {
   text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
   margin-top: 10px;
   margin-bottom: 20px;
-  color: purple;
+  color: #6923A7;
 }
 
 #app-description {
