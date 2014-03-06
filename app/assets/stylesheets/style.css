@@ -7,15 +7,21 @@
   margin-left: 30px;
 }
 
+#encouragement-to-submit {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
 #story-body {
-  width: 300px;
-  height: 150px;
-  font-family: sans-serif;
   resize: none;
 }
 
 #story-submit {
-  display: block;
+  margin-top: 20px;
+}
+
+#stories-div {
+  margin-top: 30px;
 }
 
 #navbar-container {
@@ -57,7 +63,6 @@ p {
 
 #what-should-i-do-today {
   text-align: center;
-  margin-top: 30px;
 }
 
 #suggestion-instructions {
@@ -86,7 +91,6 @@ h2 {
 }
 
 #do-it { /*div containing the do-it button*/
-  margin-top: 30px;
 }
 
 #HMSremaining {
@@ -106,7 +110,6 @@ h2 {
 }
 
 #did-it { /*div containing the did-it button*/
-  margin-top: 30px;
 }
 
 #google-map a {

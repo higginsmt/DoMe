@@ -8,6 +8,7 @@ class AdventuresController < ApplicationController
     @adventure = Adventure.new(user_id: current_user.id, activity_id: params[:activity_id])
     @adventure.save
     render json: @adventure # because this action started in ajax, it automatically goes back to ajax, and the redirect must be done from there
+    flash[:success] = "Congratulations! You did it! :)"
   end
 
   def update # show page for adventure with empty story form
