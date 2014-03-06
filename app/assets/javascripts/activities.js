@@ -55,7 +55,7 @@ Deck.renderCardHTML = function() {
               + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
               + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
               + "<div class='text-center' id='do-it'>"
-                + "<button id='do-it-button' class='btn btn-lg btn-success'>Do me!</button>"
+                + "<button id='do-it-button' class='btn btn-md'>Do me!</button>"
               + "</div>";
   return HTML;
 };
