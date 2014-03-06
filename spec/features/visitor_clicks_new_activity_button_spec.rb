@@ -21,9 +21,9 @@ feature 'Visitor clicks new activity button' do
     scenario 'multiple times' do
       visit root_path
       click_button("What should I do today?")
-      page.should (have_content('Run outside!') || have_content('Play guitar!'))
+      expect(page).to have_content (('Run outside!') || ('Play guitar!'))
       click_button("What should I do today?")
-      page.should (have_content('Play guitar!') || have_content('Run outside!'))
+      expect(page).to have_content (('Play guitar!') || ('Run outside!'))
     end
   end
 end
