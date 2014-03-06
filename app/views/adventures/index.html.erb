@@ -1,30 +1,35 @@
-<h2>Your Adventures</h2>
+<div class="container">
 
-<% if @adventures.blank? %>
-  <h3>You haven't gone on any adventures yet.</h3>
-  <h3><%= link_to "Why not try one?", root_path %></h3>
+<div class="feature-space">
+  <h2>Your Adventures</h2>
 
-<% else %>
+  <% if @adventures.blank? %>
+    <h3>You haven't gone on any adventures yet.</h3>
+    <h3><%= link_to "Why not try one?", root_path %></h3>
 
-  <table id="user-adventures">
-    <tr id="table-headings">
-      <th id="adventure-activity">Activity</th>
-      <th id="adventure-date">Date</th>
-      <th id="adventure-story">Story</th>
-    </tr>
-    <% @adventures.each do |adventure| %>
-      <tr>
-        <td><%= adventure.activity.name %></td>
-        <td><%= adventure.created_at.strftime("%a %-m/%-e/%y") %></td>
-        <td><%= adventure.story.truncate(50, separator: ' ') %></td>
+  <% else %>
+
+
+    <table id="user-adventures" class="table">
+      <tr id="table-headings">
+        <th id="adventure-activity">Activity</th>
+        <th id="adventure-date">Date</th>
+        <th id="adventure-story">Story</th>
       </tr>
-    <% end %>
-  </table>
+      <% @adventures.each do |adventure| %>
+        <tr>
+          <td><%= adventure.activity.name %></td>
+          <td><%= adventure.created_at.strftime("%a %-m/%-e/%y") %></td>
+          <td><%= ' ' || adventure.story.truncate(50, separator: ' ') %></td>
+        </tr>
+      <% end %>
+    </table>
+</div>
 
-  <br>
-
-  <%= link_to "Suggest another activity!", new_activity_path %>
-  <br>
-  <%= link_to "Go on another adventure!", root_path %>
+  <div class="col-sm-6 col-sm-offset-3 text-center">
+    <%= link_to "Suggest another activity!", new_activity_path, class: 'btn btn-primary btn-lg' %> &nbsp;&nbsp;&nbsp;
+    <%= link_to "Go on another adventure!", root_path, class: 'btn btn-success btn-lg' %>
+  </div>
 
 <% end %>
+</div>
