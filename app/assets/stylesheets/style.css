@@ -1,28 +1,4 @@
-
-.input_row {
-  margin: 30px;
-}
-
-.submit_activity {
-  margin-left: 30px;
-}
-
-#encouragement-to-submit {
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-#story-body {
-  resize: none;
-}
-
-#story-submit {
-  margin-top: 20px;
-}
-
-#stories-div {
-  margin-top: 30px;
-}
+/* navigation bar */
 
 #navbar-container {
   padding-right: 20px;
@@ -33,22 +9,22 @@
   color: #777777;
 }
 
+/* basic purple box */
+
 .feature-space {
   background-color: rgb(111, 84, 153);
   background-image: linear-gradient(rgb(86, 61, 124) 0px, rgb(111, 84, 153) 100%);
   background-repeat: repeat-x;
   border-radius: 15px;
-  padding: 30px 40px; /*tops, sides*/
+  padding: 30px 40px; /* tops, sides */
   color: white;
   margin-top: 60px;
   margin-bottom: 30px;
 }
 
-#activity-card {
+/* typography */
 
-}
-
-h1 {
+h1#app-name {
   font-size: 50px;
   font-weight: normal;
   text-align: center;
@@ -58,29 +34,18 @@ h1 {
   margin-bottom: 20px;
 }
 
-p {
-  font-size: 115%;
-}
-
-#what-should-i-do-today {
-  text-align: center;
-}
-
-#suggestion-instructions {
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
-#suggestion-submit {
-  margin-top: 10px;
-}
-
 h2 {
   margin-top: 18px;
 }
 
-#user-info:hover {
-  color: #777777;
+p {
+  font-size: 115%;
+}
+
+/* activity card and do it page */
+
+#what-should-i-do-today {
+  text-align: center;
 }
 
 #blurb {
@@ -91,7 +56,7 @@ h2 {
   color: #39b3d7;
 }
 
-#do-it { /*div containing the do-it button*/
+#do-it { /* div containing the do-it button */
 }
 
 #HMSremaining {
@@ -110,12 +75,44 @@ h2 {
   margin: -10px;
 }
 
-#did-it { /*div containing the did-it button*/
-}
-
-#google-map a {
+#google-map a { /* doesn't work yet, needs parsing of user map input */
   color: #39b3d7;
 }
+
+#did-it { /* div containing the did-it button */
+}
+
+/* suggest a new activity page */
+
+#suggestion-instructions {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#suggestion-submit {
+  margin-top: 10px;
+}
+
+/* submit a new story */
+
+#encouragement-to-submit {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#story-body {
+  resize: none;
+}
+
+#story-submit {
+  margin-top: 20px;
+}
+
+#stories-div {
+  margin-top: 30px;
+}
+
+/* activities and adventures index pages */
 
 .table > tbody > tr > th
 {
