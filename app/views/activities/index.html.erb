@@ -4,7 +4,7 @@
 
     <h2>Your Activity Suggestions</h2>
 
-    <% if @adventures.blank? %>
+    <% if @submitted.blank? %>
       <p>You haven't submitted any activities yet.</p>
       <br>
       <%= link_to "Why not submit one?", new_activity_path, class: "btn btn-success btn-lg" %>
