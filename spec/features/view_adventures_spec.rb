@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature 'Visitor clicks new activity button' do
-  context 'when not signed in', :js do
+feature 'User can view their adventures' do
+  context 'when signed in', :js do
     background do
       user = create(:user)
       sign_in_as(user)
@@ -15,15 +15,17 @@ feature 'Visitor clicks new activity button' do
       fill_in 'Description', with: 'Get some exercise'
       fill_in 'Things Needed', with: 'Legs!'
       click_button 'Submit'
-      click_link 'Sign out'
     end
 
-    scenario 'multiple times' do
+    scenario 'as signed in user' do
       visit root_path
-      click_button("What should I do today?")
+      click_button 'What should I do today?'
+      click_button 'Do me!'
+      click_button 'I Did It!'
+      fill_in 'type your story here!', with: 'I had a great time'
+      click_button 'story-submit'
+      click_link 'Your adventures'
       page.should (have_content('Run outside!') || have_content('Play guitar!'))
-      click_button("What should I do today?")
-      page.should (have_content('Play guitar!') || have_content('Run outside!'))
     end
   end
 end
