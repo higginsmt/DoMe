@@ -27,7 +27,8 @@ class ApplicationController < ActionController::Base
         activity_path(@activity)
       end
     else
-      session[:previous_url] || root_path
+      # session[:previous_url] || root_path
+      root_path
     end
   end
 end

@@ -1,86 +1,125 @@
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* navigation bar */
+
+#navbar-container {
+  padding-right: 20px;
+  width: 100%;
 }
 
-nav ul li {
-  display: inline;
+.navbar-default .navbar-nav > li > a {
+  color: #777777;
 }
 
-.container {
-  background-color: LightGoldenRodYellow;
-  width: 500px;
-  padding: 20px;
+/* basic purple box */
+
+.feature-space {
+  background-color: rgb(111, 84, 153);
+  background-image: linear-gradient(rgb(86, 61, 124) 0px, rgb(111, 84, 153) 100%);
+  background-repeat: repeat-x;
   border-radius: 15px;
-  text-align: left;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 30px 40px; /* tops, sides */
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
-.centered {
+/* typography */
+
+h1#app-name {
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 18px;
+}
+
+p {
+  font-size: 115%;
+}
+
+/* activity card and do it page */
+
+#what-should-i-do-today {
   text-align: center;
 }
 
-#activity-card {
-  background-color: LightGoldenRodYellow;
-  width: 500px;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: left;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+#blurb {
+  margin-top: 20px;
 }
 
-#activity-card h2 {
-  color: purple;
-  font-size: 22pt;
-  text-align: center;
+#url a {
+  color: #39b3d7;
+}
+
+#do-it { /* div containing the do-it button */
 }
 
 #HMSremaining {
   text-align: center;
-  font-weight: bold;
-  font-size: 32pt;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.input_row {
-  margin: 30px;
+.countdown-text {
+  font-size: 20px;
 }
 
-.submit_activity {
-  margin-left: 30px;
+#countdown-timer {
+  font-size: 72px;
+  text-align: center;
+  margin: -10px;
+}
+
+#google-map a { /* doesn't work yet, needs parsing of user map input */
+  color: #39b3d7;
+}
+
+#did-it { /* div containing the did-it button */
+}
+
+/* suggest a new activity page */
+
+#suggestion-instructions {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#suggestion-submit {
+  margin-top: 10px;
+}
+
+/* submit a new story */
+
+#encouragement-to-submit {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 #story-body {
-  width: 300px;
-  height: 150px;
-  font-family: sans-serif;
   resize: none;
 }
 
 #story-submit {
-  display: block;
+  margin-top: 20px;
 }
 
-table{
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0;
-  width: 750px;
-  text-align: left;
+#stories-div {
+  margin-top: 30px;
 }
 
-th, td {
-  overflow: hidden;
-  width: 250px;
-  margin: 0;
-  border-bottom: 1px solid LightGray;
+/* activities and adventures index pages */
+
+.table > tbody > tr > th
+{
+  border-top: none;
+  border-bottom: 1px solid #ddd;;
 }
 
-th {
-  padding-bottom: 10px;
-  font-size: 20px;
+.table > tbody > tr > td {
+  border-top: none;
 }

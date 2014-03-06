@@ -7,29 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><%= link_to "Home", root_path %> |</li>
-      <li><%= link_to "About", activities_about_path %> |</li>
-      <li><%= link_to "Suggest an activity", new_activity_path %> | </li>
-      <% if user_signed_in? %>
-        <li><%= link_to('Your suggestions', activities_path) %> | </li>
-        <li><%= link_to "Your adventures", user_adventures_path %> | </li>
-        <li data-user-id="<%= current_user.id %>" id="user-info">
-          Signed in as <%= current_user.email %> |
-        </li>
-        <li><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>
-      <% else %>
-        <li><%= link_to('Sign in', new_user_session_path) %></li>
-      <% end %>
 
-    </ul>
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container" id="navbar-container">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", activities_about_path %></li>
+        <li><%= link_to "Suggest an activity", new_activity_path %> </li>
+        <% if user_signed_in? %>
+          <li><%= link_to('Your suggestions', activities_path) %> </li>
+          <li><%= link_to "Your adventures", user_adventures_path %> </li>
+          <li data-user-id="<%= current_user.id %>" id="user-info" class="navbar-text">
+            Signed in as <%= current_user.email %>
+          </li>
+          <li><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><%= link_to('Sign in', new_user_session_path) %></li>
+        <% end %>
+      </ul>
+    </div>
   </nav>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <p class="error"><%= flash[:error] %></p>
+  <div class="container col-sm-4 col-sm-offset-4">
+    <div class="row">
 
+        <% flash.each do |key, value| %>
+          <div class="<%= flash_class(key) %> fade in">
+            <%= value %>
+          </div>
+        <% end %>
+
+    </div>
+  </div>
 
   <%= yield %>
 

@@ -10,6 +10,7 @@ $(document).ready(function(){
 
   $('#next-activity').click(Deck.renderCard.bind(Deck));
   $('#story-submit').click(Deck.createStory);
+
 });
 
 var Deck = Deck || {
@@ -50,10 +51,12 @@ Deck.getNextCard = function() {
 };
 
 Deck.renderCardHTML = function() {
-  var HTML = "<h2>" + Deck.cards[Deck.current_card].name + "</h2>"
-                  + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
-                  + "<p><a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
-                  + "<button id='do-it-button'>Do me!</button>";
+  var HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
+              + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
+              + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
+              + "<div class='text-center' id='do-it'>"
+                + "<button id='do-it-button' class='btn btn-lg btn-success'>Do me!</button>"
+              + "</div>";
   return HTML;
 };
 
@@ -71,15 +74,14 @@ Deck.renderDoIt = function(event) {
 
 Deck.doItHTML = function() {
   var HTML;
-  HTML = "<h2>" + Deck.cards[Deck.current_card].name + "</h2>"
-                  + "<p>" + Deck.cards[Deck.current_card].blurb + "</p>"
-                  + "<p> Things you'll need: " + Deck.cards[Deck.current_card].things_needed + "</p>"
-                  + "<p><a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
-                  + "<p class='centered'> Whoa! You'd better get going, there's only </p>"
-                  + "<p id='HMSremaining'></p>"
-                  + "<p class='centered'> left to have this adventure today! </p>"
-                  + "<p><div class='centered'>" + Deck.cards[Deck.current_card].map + "</div></p>"
-                  + "<button id='did-it-button' href='/adventures/new'>I Did It!</button>";
+  HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
+          + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
+          + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
+          + "<div id='HMSremaining'></div>"
+          + "<div id='google-map' class='text-center'>" + Deck.cards[Deck.current_card].map + "</div>"
+          + "<div id='did-it' class='text-center'>"
+            + "<button id='did-it-button' class='btn btn-lg btn-success' href='/adventures/new'>I Did It!</button>"
+          + "</div>";
   return HTML;
 };
 
@@ -115,12 +117,13 @@ Deck.createStory = function(event) {
   })
   .done(function(data){
       // data is currently the adventure
-      var storyHTML = '<li>' + data.story + '</li>';
+      var storyHTML = '<p>' + data.story + '</p>';
 
       // get rid of story form (can only submit one story)
       $('#new-story').empty();
 
       // append story body to existing stories
+      $('#no-stories-yet').empty();
       $('#stories').prepend(storyHTML);
 
   });

@@ -1,0 +1,33 @@
+how to do bootstrap, from mike at lunch
+
+-----------------------------
+
+get the bootstrap sass gem:
+
+  https://github.com/twbs/bootstrap-sass
+
+in Gemfile:
+
+ gem 'bootstrap-sass', '~> 3.1.1'
+ (don't need sass-rails gem)
+
+ remember to bundle!
+
+in application.css
+
+  rename the file to application.css.scss
+  add:
+     @import "bootstrap";
+
+in application.js
+
+  add (before //= require tree):
+    //= require bootstrap
+
+-----------------------------
+
+
+
+as long as the browser is bigger than size "sm" then it will take up the number of columns specified (out of 12)
+
+to center a column, set the offset number of columns to the left

@@ -1,8 +1,38 @@
 <div class="container">
-  <h2>My Submissions</h2>
-  <p>
-  <% @submitted.each do |submission| %>
-    <%= submission.name %><br>
-  <% end %>
-  </p>
+
+  <div class="feature-space">
+
+    <h2>Your Activity Suggestions</h2>
+
+    <% if @adventures.blank? %>
+      <p>You haven't submitted any activities yet.</p>
+      <br>
+      <%= link_to "Why not submit one?", new_activity_path, class: "btn btn-success btn-lg" %>
+
+    <% else %>
+
+      <table id="activity-submissions" class="table">
+        <tr id="table-headings">
+          <th>Activity</th>
+          <th>Desc</th>
+          <th>Link</th>
+        </tr>
+        <% @submitted.each do |submission| %>
+          <tr>
+            <td><%= submission.name %></td>
+            <td><%= submission.blurb.truncate(50, separator: ' ') %></td>
+            <td><%= submission.url.truncate(50) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
+
+  </div>
+
+  <div class="col-sm-6 col-sm-offset-3 text-center">
+    <%= link_to "Suggest another activity!", new_activity_path, class: 'btn btn-primary btn-lg' %> &nbsp;&nbsp;&nbsp;
+    <%= link_to "Go on another adventure!", root_path, class: 'btn btn-success btn-lg' %>
+  </div>
+
 </div>
