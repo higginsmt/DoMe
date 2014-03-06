@@ -16,7 +16,6 @@ class ActivitiesController < ApplicationController
 
   def index
     @submitted = current_user.created_activities
-    # binding.pry
   end
 
   def new
