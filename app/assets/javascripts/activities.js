@@ -116,12 +116,13 @@ Deck.createStory = function(event) {
   })
   .done(function(data){
       // data is currently the adventure
-      var storyHTML = '<li>' + data.story + '</li>';
+      var storyHTML = '<p>' + data.story + '</p>';
 
       // get rid of story form (can only submit one story)
       $('#new-story').empty();
 
       // append story body to existing stories
+      $('#no-stories-yet').empty();
       $('#stories').prepend(storyHTML);
 
   });

@@ -20,7 +20,7 @@
 
       <div id="stories">
         <% if @stories.first.blank? %>
-          <p>No stories yet. Be the first!</p>
+          <p id="no-stories-yet">No stories yet. Be the first!</p>
         <% else %>
           <% @stories.each do |story| %>
             <p><%= story %></p>
