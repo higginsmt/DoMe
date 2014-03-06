@@ -17,7 +17,6 @@ feature 'User submits new activity' do
     fill_in 'Things Needed', with: 'grill, meat, charcoal, bbq sauce'
     click_button 'Submit'
 
-    expect(page).to have_content 'Your activity has been successfully submitted'
     expect(page).to have_content 'whoo'
     expect(page).to have_content 'yay'
     expect(page).to have_content 'http://www.google.com'

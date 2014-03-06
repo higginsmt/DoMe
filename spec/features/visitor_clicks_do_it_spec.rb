@@ -21,7 +21,7 @@ feature 'Visitor clicks do it' do
       visit root_path
       click_button 'What should I do today?'
       click_button 'Do me!'
-      expect(page).to have_content 'Time left until midnight'
+      expect(page).to have_content 'Whoa'
     end
   end
 
@@ -46,7 +46,7 @@ feature 'Visitor clicks do it' do
       visit root_path
       click_button 'What should I do today?'
       click_button 'Do me!'
-      expect(page).to have_content 'Time left until midnight'
+      expect(page).to have_content 'Whoa'
     end
   end
 end

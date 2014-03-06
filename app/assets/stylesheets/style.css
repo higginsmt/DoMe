@@ -1,3 +1,10 @@
+body {
+  background-image: url('http://farm6.staticflickr.com/5100/5401109113_8d9b691c2b_o.jpg');
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: no-repeat;
+}
+
 /* navigation bar */
 
 #navbar-container {
@@ -12,9 +19,11 @@
 /* basic purple box */
 
 .feature-space {
-  background-color: rgb(111, 84, 153);
+/*  background-color: rgb(111, 84, 153);
   background-image: linear-gradient(rgb(86, 61, 124) 0px, rgb(111, 84, 153) 100%);
   background-repeat: repeat-x;
+  border-radius: 15px;*/
+  background-color: rgba(0,0,0,0.7);
   border-radius: 15px;
   padding: 30px 40px; /* tops, sides */
   color: white;
@@ -28,7 +37,7 @@ h1#app-name {
   font-size: 50px;
   font-weight: normal;
   text-align: center;
-  color: white;
+  /*color: white;*/
   text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -122,4 +131,9 @@ p {
 
 .table > tbody > tr > td {
   border-top: none;
+}
+
+.btn {
+  /*border-radius: 20px;*/
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
