@@ -1,23 +1,32 @@
 <div class="container">
 
-  <div class="feature-space col-sm-8 col-sm-offset-2">
+  <div class="feature-space">
 
-    <h2>My Submissions</h2>
+    <h2>Your Activity Suggestions</h2>
 
-     <table id="activity-submissions" class="table">
-      <tr id="table-headings">
-        <th>Activity</th>
-        <th>Desc</th>
-        <th>Link</th>
-      </tr>
-      <% @submitted.each do |submission| %>
-        <tr>
-          <td><%= submission.name %></td>
-          <td><%= submission.blurb.truncate(50, separator: ' ') %></td>
-          <td><%= submission.url.truncate(50) %></td>
+    <% if @adventures.blank? %>
+      <p>You haven't submitted any activities yet.</p>
+      <br>
+      <%= link_to "Why not submit one?", new_activity_path, class: "btn btn-success btn-lg" %>
+
+    <% else %>
+
+      <table id="activity-submissions" class="table">
+        <tr id="table-headings">
+          <th>Activity</th>
+          <th>Desc</th>
+          <th>Link</th>
         </tr>
-      <% end %>
-    </table>
+        <% @submitted.each do |submission| %>
+          <tr>
+            <td><%= submission.name %></td>
+            <td><%= submission.blurb.truncate(50, separator: ' ') %></td>
+            <td><%= submission.url.truncate(50) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
 
   </div>
 

@@ -11,11 +11,6 @@ $(document).ready(function(){
   $('#next-activity').click(Deck.renderCard.bind(Deck));
   $('#story-submit').click(Deck.createStory);
 
-  $(function() {
-     $('.alert').delay(500).fadeIn('normal', function() {
-        $(this).delay(1000).fadeOut(500);
-     });
-  });
 });
 
 var Deck = Deck || {
