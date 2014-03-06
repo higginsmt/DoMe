@@ -45,12 +45,10 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params[:activity][:user_id] = if current_user.present?
-      current_user.id
-    else
-      nil
+    if current_user.present?
+      params[:activity][:user_id] = current_user.id
     end
-    params.require(:activity).permit(:name, :blurb, :url, :things_needed, :user_id)
+    params.require(:activity).permit(:name, :blurb, :url, :map_code, :things_needed, :user_id)
   end
 
 end
