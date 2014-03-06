@@ -1,4 +1,21 @@
+body {
+  background-image: url('http://4.bp.blogspot.com/-lo-urRpzT-E/ThdJJn2k9ZI/AAAAAAAABEI/Px1-GtT_MPs/s1600/MJI_1569.jpg');
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+}
+
+/*#transparent-bg {
+  background-color: rgba(0,255,255,0.9);
+  display: block;
+}*/
+
 /* navigation bar */
+
+.navbar-default {
+  background-color: rgba(255,255,255,0.7);
+}
 
 #navbar-container {
   padding-right: 20px;
@@ -12,12 +29,14 @@
 /* basic purple box */
 
 .feature-space {
-  background-color: rgb(111, 84, 153);
+/*  background-color: rgb(111, 84, 153);
   background-image: linear-gradient(rgb(86, 61, 124) 0px, rgb(111, 84, 153) 100%);
   background-repeat: repeat-x;
+  border-radius: 15px;*/
+  background-color: rgba(255,255,255,0.7);
   border-radius: 15px;
-  padding: 30px 40px; /* tops, sides */
-  color: white;
+  padding: 5px 20px; /* tops, sides */
+  color: #777777;
   margin-top: 60px;
   margin-bottom: 30px;
 }
@@ -28,7 +47,7 @@ h1#app-name {
   font-size: 50px;
   font-weight: normal;
   text-align: center;
-  color: white;
+  /*color: white;*/
   text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -46,6 +65,7 @@ p {
 
 #what-should-i-do-today {
   text-align: center;
+  padding: 0;
 }
 
 #blurb {
@@ -127,4 +147,14 @@ p {
 
 .table > tbody > tr > td {
   border-top: none;
+}
+
+.btn {
+  /*border-radius: 20px;*/
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+#next-activity {
+  background-color: #ffff80;
+  color: white;
 }

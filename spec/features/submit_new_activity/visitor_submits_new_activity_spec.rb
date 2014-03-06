@@ -22,7 +22,6 @@ feature 'Visitor submits new activity successfully' do
 
     expect(page).to have_content 'Signed in as anna@yay.com'
     expect(page).to have_content 'You have signed up successfully'
-    expect(page).to have_content 'Your activity has been successfully submitted'
     expect(page).to have_content 'whoo'
     expect(page).to have_content 'yay'
     expect(page).to have_content 'http://www.google.com'
@@ -35,7 +34,6 @@ feature 'Visitor submits new activity successfully' do
     click_button 'Sign in'
 
     expect(page).to have_content 'Signed in as'
-    expect(page).to have_content 'Your activity has been successfully submitted'
     expect(page).to have_content 'whoo'
     expect(page).to have_content 'yay'
     expect(page).to have_content 'http://www.google.com'
@@ -59,7 +57,6 @@ feature 'Visitor submits new activity unsuccessfully' do
 
     expect(page).to have_content 'Signed in as'
     expect(page).to have_content "can't be blank"
-    expect(page).to_not have_content 'Your activity has been successfully submitted'
   end
 
 end

@@ -14,14 +14,14 @@
       <table id="activity-submissions" class="table">
         <tr id="table-headings">
           <th>Activity</th>
-          <th>Desc</th>
+          <th>Description</th>
           <th>Link</th>
         </tr>
         <% @submitted.each do |submission| %>
           <tr>
             <td><%= submission.name %></td>
             <td><%= submission.blurb.truncate(50, separator: ' ') %></td>
-            <td><%= submission.url.truncate(50) %></td>
+            <td><a href="<%= submission.url.truncate(50) %>"><%= submission.url.truncate(50) %></a></td>
           </tr>
         <% end %>
       </table>
