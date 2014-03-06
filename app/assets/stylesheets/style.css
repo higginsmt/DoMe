@@ -25,7 +25,8 @@
 /* typography */
 
 h1#app-name {
-  font-size: 50px;
+  font-family: 'broken_15regular', sans-serif;
+  font-size: 100px;
   font-weight: normal;
   text-align: center;
   color: white;
