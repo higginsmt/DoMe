@@ -1,6 +1,6 @@
 <div class="container">
   <div class="feature-space">
-    <h2><%= @activity.name %></h2>
+    <h2 data-activity-id="<%= @activity.id %>"><%= @activity.name %></h2>
 
     <p id="blurb">Description: <%= @activity.blurb %></p>
     <p id="url">More info: <%= link_to @activity.url, @activity.url %></p>
