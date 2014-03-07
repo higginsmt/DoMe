@@ -76,7 +76,7 @@ Deck.doItHTML = function() {
   var HTML;
   HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
           + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
-          + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
+          + "<p id='url'>More info: <a href='"+ Deck.cards[Deck.current_card].url +"'>" + Deck.cards[Deck.current_card].url + "</a></p>"
           + "<div id='HMSremaining'></div>"
           + "<div id='google-map' class='text-center'>" + Deck.cards[Deck.current_card].map + "</div>"
           + "<div id='did-it' class='centered'>"
