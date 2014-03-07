@@ -8,7 +8,7 @@ $(document).ready(function(){
     Deck.storeData(data);
   });
 
-  $('#next-activity').click(Deck.renderCard.bind(Deck));
+  $('#next-activity').click(Deck.renderCard);
   $('#story-submit').click(Deck.createStory);
 
 });
@@ -24,25 +24,26 @@ Deck.storeData = function(data) {
   Deck.cards = data;
 };
 
-Deck.renderCard = function(e) {
+Deck.renderCard = function(event) {
   var $featureSpace = $('#activity-card'),
       cardHTML;
+  event.preventDefault();
   // Get the index of the card that previously displayed
-  this.previous_card = this.current_card;
+  Deck.previous_card = Deck.current_card;
   // Set Deck.next_card to a random index
   Deck.getNextCard();
   // Keep running Deck.getNextCard until next_card is not equal to previous_card
-  while(this.previous_card === this.next_card) {
+  while(Deck.previous_card === Deck.next_card) {
     Deck.getNextCard();
   };
   // Set current_card equal to next_card
-  this.current_card = this.next_card;
-  console.log(this.current_card);
+  Deck.current_card = Deck.next_card;
   $featureSpace.empty();
   cardHTML = Deck.renderCardHTML();
   $featureSpace.append(cardHTML);
   // add an event listener for the DoMe button
   $('#do-it-button').click(Deck.renderDoIt);
+  return false;
 };
 
 // Function to generate a random index in the cards array
@@ -58,6 +59,7 @@ Deck.renderCardHTML = function() {
                 + "<br>"
                 + "<button id='do-it-button' class='btn btn-md'>Do me!</button>"
               + "</div>";
+  console.log("Current card: " + this.current_card);
   return HTML;
 };
 
