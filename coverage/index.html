@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-03-06T12:14:34-05:00">2014-03-06T12:14:34-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-03-06T20:13:54-05:00">2014-03-06T20:13:54-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         10.35
+         10.5
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>68</b> relevant lines. 
-    <span class="green"><b>68</b> lines covered</span> and
+    <b>67</b> relevant lines. 
+    <span class="green"><b>67</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#b24bcd6947a16a726bc03c8d48b8c884d5497ce7" class="src_link" title="app/controllers/activities_controller.rb">app/controllers/activities_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>56</td>
-        <td>30</td>
-        <td>30</td>
+        <td>54</td>
+        <td>29</td>
+        <td>29</td>
         <td>0</td>
-        <td>18.0</td>
+        <td>18.6</td>
       </tr>
       
       <tr>
@@ -103,15 +103,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         13.47
+         13.67
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>3</b> files in total.
-    <b>65</b> relevant lines. 
-    <span class="green"><b>65</b> lines covered</span> and
+    <b>64</b> relevant lines. 
+    <span class="green"><b>64</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -131,11 +131,11 @@
       <tr>
         <td class="strong"><a href="#b24bcd6947a16a726bc03c8d48b8c884d5497ce7" class="src_link" title="app/controllers/activities_controller.rb">app/controllers/activities_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>56</td>
-        <td>30</td>
-        <td>30</td>
+        <td>54</td>
+        <td>29</td>
+        <td>29</td>
         <td>0</td>
-        <td>18.0</td>
+        <td>18.6</td>
       </tr>
       
       <tr>
@@ -373,8 +373,8 @@
     <h3>app/controllers/activities_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>30</b> relevant lines. 
-      <span class="green"><b>30</b> lines covered</span> and
+      <b>29</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -667,52 +667,40 @@
         <li class="covered" data-hits="16" data-linenumber="48">
           <span class="hits">16</span>
           
-          <code class="ruby">    params[:activity][:user_id] = if current_user.present?</code>
+          <code class="ruby">    if current_user.present?</code>
         </li>
       
         <li class="covered" data-hits="13" data-linenumber="49">
           <span class="hits">13</span>
           
-          <code class="ruby">      current_user.id</code>
+          <code class="ruby">      params[:activity][:user_id] = current_user.id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="51">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="16" data-linenumber="51">
+          <span class="hits">16</span>
           
-          <code class="ruby">      nil</code>
+          <code class="ruby">    params.require(:activity).permit(:name, :blurb, :url, :map_code, :things_needed, :user_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="16" data-linenumber="53">
-          <span class="hits">16</span>
-          
-          <code class="ruby">    params.require(:activity).permit(:name, :blurb, :url, :things_needed, :user_id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">end</code>
