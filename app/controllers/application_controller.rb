@@ -26,6 +26,12 @@ class ApplicationController < ActionController::Base
       else
         activity_path(@activity)
       end
+    elsif session[:activity_id].present?
+      @adventure = Adventure.new(user_id: current_user.id, activity_id: session[:activity_id])
+      @adventure.save
+      flash[:success] = "Congratulations! You did it! :)"
+      @activity = Activity.find(session[:activity_id])
+      adventure_stories_path(@activity)
     else
       # session[:previous_url] || root_path
       root_path

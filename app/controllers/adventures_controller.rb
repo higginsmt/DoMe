@@ -4,7 +4,7 @@ class AdventuresController < ApplicationController
     @adventures = Adventure.where(user_id: current_user.id).order(created_at: :desc)
   end
 
-  def new
+  def new # if logged in
     @adventure = Adventure.new(user_id: current_user.id, activity_id: params[:activity_id])
     @adventure.save
     render json: @adventure # because this action started in ajax, it automatically goes back to ajax, and the redirect must be done from there
@@ -18,6 +18,12 @@ class AdventuresController < ApplicationController
     @stories = all_adventures.map do |adventure|
       adventure[:story]
     end
+  end
+
+  def new_after_login
+    session[:activity_id] = params[:id]
+    flash[:alert] = "You need to sign in to save your adventure :)"
+    redirect_to new_user_session_path
   end
 
   def create_story

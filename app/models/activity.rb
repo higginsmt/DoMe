@@ -3,7 +3,7 @@ class Activity < ActiveRecord::Base
   has_many :adventures
   has_many :completed_users, through: :adventures, source: :user
 
-  before_validation :smart_add_http_to_url
+  # before_validation :smart_add_http_to_url
   validates_presence_of :name, :blurb, :user_id
   validates_format_of :url, with: URI.regexp(['http'])
 

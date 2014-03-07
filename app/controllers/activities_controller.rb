@@ -25,6 +25,7 @@ class ActivitiesController < ApplicationController
   def create
     if current_user.nil?
       session[:activity_params] = activity_params
+      flash[:error] = "You need to sign in to continue - don't worry, we saved your submission :)"
       redirect_to new_user_session_path
     else
       @activity = Activity.new(activity_params)
