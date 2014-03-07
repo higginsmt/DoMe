@@ -22,7 +22,7 @@ class AdventuresController < ApplicationController
 
   def new_after_login
     session[:activity_id] = params[:id]
-    flash[:alert] = "You need to sign in to save your adventure :)"
+    flash[:notice] = "You need to sign in to save your adventure :)"
     redirect_to new_user_session_path
   end
 
