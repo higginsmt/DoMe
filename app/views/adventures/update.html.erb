@@ -1,19 +1,18 @@
 <div class="container">
   <div class="feature-space">
+
     <h2 data-activity-id="<%= @activity.id %>" data-adventure-id="<%= @adventure.id %>" id="activity-name"><%= @activity.name %></h2>
 
     <p id="encouragement-to-submit">What was your adventure like? Did you enjoy it? Read others' stories and share your own!</p>
 
-    <div class="row col-sm-10">
       <form id="new-story">
         <textarea id="story-body" placeholder="type your story here!" rows="4" class="form-control"></textarea>
         <div class="text-left">
           <input id="story-submit" type="submit" value="Submit" class="btn btn-success">
         </div>
       </form>
-    </div>
 
-    <div class="row col-sm-8" id="stories-div">
+    <div id="stories-div">
       <h3>Stories</h3>
 
       <div id="stories">
