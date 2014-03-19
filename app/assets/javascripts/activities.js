@@ -35,7 +35,7 @@ Deck.renderCard = function(event) {
   // Keep running Deck.getNextCard until next_card is not equal to previous_card
   while(Deck.previous_card === Deck.next_card) {
     Deck.getNextCard();
-  };
+  }
   // Set current_card equal to next_card
   Deck.current_card = Deck.next_card;
   $featureSpace.empty();
@@ -52,13 +52,7 @@ Deck.getNextCard = function() {
 };
 
 Deck.renderCardHTML = function() {
-  var HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
-              + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
-              + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
-              + "<div class='centered' id='do-it'>"
-                + "<br>"
-                + "<button id='do-it-button' class='btn btn-md'>Do me!</button>"
-              + "</div>";
+  var HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>" + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>" + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>" + "<div class='centered' id='do-it'>" + "<br>" + "<button id='do-it-button' class='btn btn-md'>Do me!</button>" + "</div>";
   console.log("Current card: " + this.current_card);
   return HTML;
 };
@@ -77,15 +71,7 @@ Deck.renderDoIt = function(event) {
 
 Deck.doItHTML = function() {
   var HTML;
-  HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
-          + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
-          + "<p id='url'>More info: <a href='"+ Deck.cards[Deck.current_card].url +"'>" + Deck.cards[Deck.current_card].url + "</a></p>"
-          + "<div id='HMSremaining'></div>"
-          + "<div id='google-map' class='text-center'>" + Deck.cards[Deck.current_card].map + "</div>"
-          + "<div id='did-it' class='centered'>"
-            + "<br>"
-            + "<button id='did-it-button' class='btn btn-md' href='/adventures/new'>I Did It!</button>"
-          + "</div>";
+  HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>" + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>" + "<p id='url'>More info: <a href='"+ Deck.cards[Deck.current_card].url +"'>" + Deck.cards[Deck.current_card].url + "</a></p>" + "<div id='HMSremaining'></div>" + "<div id='google-map' class='text-center'>" + Deck.cards[Deck.current_card].map + "</div>" + "<div id='did-it' class='centered'>" + "<br>" + "<button id='did-it-button' class='btn btn-md' href='/adventures/new'>I Did It!</button>" + "</div>";
   return HTML;
 };
 
@@ -99,10 +85,10 @@ Deck.renderDidIt = function(event) {
     data: { activity_id: id }
   })
   .success(function(data){
-    window.location.href = '/adventures/activity/' + id // send to show page for adventure
+    window.location.href = '/adventures/activity/' + id;
   })
   .fail(function(data) {
-    window.location.href = '/adventures/new/' + id
+    window.location.href = '/adventures/new/' + id;
   }); // end ajax
 
   return false;
