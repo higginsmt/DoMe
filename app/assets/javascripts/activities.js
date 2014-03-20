@@ -5,83 +5,83 @@ $(document).ready(function(){
     dataType: 'json'
   })
   .done(function(data) {
-    Deck.storeData(data);
+    Activities.storeData(data);
   });
 
-  $('#next-activity').click(Deck.renderCard);
-  $('#story-submit').click(Deck.createStory);
+  $('#next-activity').click(Activities.renderActivity);
+  $('#story-submit').click(Activities.createStory);
 
 });
 
-var Deck = Deck || {
-  current_card: 0,
-  cards: [],
-  previous_card: 0,
-  next_card: null
+var Activities = Activities || {
+  current_activity: 0,
+  all_activities: [],
+  previous_activity: 0,
+  next_activity: null
 };
 
-Deck.storeData = function(data) {
-  Deck.cards = data;
+Activities.storeData = function(data) {
+  Activities.all_activities = data;
 };
 
-Deck.renderCard = function(event) {
-  var $featureSpace = $('#activity-card'),
-      cardHTML;
+Activities.renderActivity = function(event) {
+  var $featureSpace = $('#this-activity'),
+      activityHTML;
   event.preventDefault();
-  // Get the index of the card that previously displayed
-  Deck.previous_card = Deck.current_card;
-  // Set Deck.next_card to a random index
-  Deck.getNextCard();
-  // Keep running Deck.getNextCard until next_card is not equal to previous_card
-  while(Deck.previous_card === Deck.next_card) {
-    Deck.getNextCard();
-  };
-  // Set current_card equal to next_card
-  Deck.current_card = Deck.next_card;
+  // Get the index of the activity that previously displayed
+  Activities.previous_activity = Activities.current_activity;
+  // Set Activities.next_activity to a random index
+  Activities.getNextActivity();
+  // Keep running Activities.getNextActivity until next_activity is not equal to previous_activity
+  while(Activities.previous_activity === Activities.next_activity) {
+    Activities.getNextActivity();
+  }
+  // Set current_activity equal to next_activity
+  Activities.current_activity = Activities.next_activity;
   $featureSpace.empty();
-  cardHTML = Deck.renderCardHTML();
-  $featureSpace.append(cardHTML);
+  activityHTML = Activities.renderActivityHTML();
+  $featureSpace.append(activityHTML);
   // add an event listener for the DoMe button
-  $('#do-it-button').click(Deck.renderDoIt);
+  $('#do-it-button').click(Activities.renderDoIt);
   return false;
 };
 
-// Function to generate a random index in the cards array
-Deck.getNextCard = function() {
-  Deck.next_card = Math.floor(Math.random() * ((Deck.cards.length - 1) + 1) + 0);
+// Function to generate a random index in the all_activities array
+Activities.getNextActivity = function() {
+  Activities.next_activity = Math.floor(Math.random() * ((Activities.all_activities.length - 1) + 1) + 0);
 };
 
-Deck.renderCardHTML = function() {
-  var HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
-              + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
-              + "<p id='url'>More info: <a href="+ Deck.cards[Deck.current_card].url +">" + Deck.cards[Deck.current_card].url + "</a></p>"
+Activities.renderActivityHTML = function() {
+  var HTML = "<h2 class='activity-name'>" + Activities.all_activities[Activities.current_activity].name + "</h2>"
+              + "<p id='blurb'>" + Activities.all_activities[Activities.current_activity].blurb + "</p>"
+              + "<p id='url'>More info: <a href="+ Activities.all_activities[Activities.current_activity].url +">" + Activities.all_activities[Activities.current_activity].url + "</a></p>"
               + "<div class='centered' id='do-it'>"
                 + "<br>"
                 + "<button id='do-it-button' class='btn btn-md'>Do me!</button>"
               + "</div>";
-  console.log("Current card: " + this.current_card);
+  console.log("Current activity: " + this.current_activity);
   return HTML;
 };
 
-Deck.renderDoIt = function(event) {
+Activities.renderDoIt = function(event) {
   // emptying the div and redisplaying info is optional
   // but may be useful if we want to display different info here
-  $('#activity-card').empty();
+  $('#activity-activity').empty();
   $('#what-should-i-do-today').empty();
-  $('#activity-card').append(Deck.doItHTML());
-  Deck.calculateHMSleft();
-  setInterval(Deck.calculateHMSleft, 1000);
+  $('#activity-activity').append(Activities.doItHTML());
+  Activities.calculateHMSleft();
+  setInterval(Activities.calculateHMSleft, 1000);
   // set click listener for the DidIt button
-  $('#did-it-button').click(Deck.renderDidIt);
+  $('#did-it-button').click(Activities.renderDidIt);
 };
 
-Deck.doItHTML = function() {
+Activities.doItHTML = function() {
   var HTML;
-  HTML = "<h2 class='activity-name'>" + Deck.cards[Deck.current_card].name + "</h2>"
-          + "<p id='blurb'>" + Deck.cards[Deck.current_card].blurb + "</p>"
-          + "<p id='url'>More info: <a href='"+ Deck.cards[Deck.current_card].url +"'>" + Deck.cards[Deck.current_card].url + "</a></p>"
+  HTML = "<h2 class='activity-name'>" + Activities.all_activities[Activities.current_activity].name + "</h2>"
+          + "<p id='blurb'>" + Activities.all_activities[Activities.current_activity].blurb + "</p>"
+          + "<p id='url'>More info: <a href='"+ Activities.all_activities[Activities.current_activity].url +"'>" + Activities.all_activities[Activities.current_activity].url + "</a></p>"
           + "<div id='HMSremaining'></div>"
-          + "<div id='google-map' class='text-center'>" + Deck.cards[Deck.current_card].map + "</div>"
+          + "<div id='google-map' class='text-center'>" + Activities.all_activities[Activities.current_activity].map + "</div>"
           + "<div id='did-it' class='centered'>"
             + "<br>"
             + "<button id='did-it-button' class='btn btn-md' href='/adventures/new'>I Did It!</button>"
@@ -89,8 +89,8 @@ Deck.doItHTML = function() {
   return HTML;
 };
 
-Deck.renderDidIt = function(event) {
-  var id = Deck.cards[Deck.current_card].id;
+Activities.renderDidIt = function(event) {
+  var id = Activities.all_activities[Activities.current_activity].id;
   event.preventDefault();
 
   $.ajax({
@@ -108,7 +108,7 @@ Deck.renderDidIt = function(event) {
   return false;
 };
 
-Deck.createStory = function(event) {
+Activities.createStory = function(event) {
 
   var activity_id = $('#activity-name').attr('data-activity-id'),
       adventure_id = $('#activity-name').attr('data-adventure-id'),
